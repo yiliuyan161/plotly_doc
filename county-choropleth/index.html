@@ -1,0 +1,3900 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://plotly.icopy.site/county-choropleth/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>County choropleth - plotly文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="white">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deprecation-warning" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="plotly文档" class="md-header__button md-logo" aria-label="plotly文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            plotly文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              County choropleth
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="plotly文档" class="md-nav__button md-logo" aria-label="plotly文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    plotly文档
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1d-correlation/" class="md-nav__link">
+        1d correlation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Histogram/" class="md-nav__link">
+        2D Histogram
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2d-histogram-contour/" class="md-nav__link">
+        2d histogram contour
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2d-projection-of-3d-surface/" class="md-nav__link">
+        2d projection of 3d surface
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-axes/" class="md-nav__link">
+        3d axes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-bubble-charts/" class="md-nav__link">
+        3d bubble charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-camera-controls/" class="md-nav__link">
+        3d camera controls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-filled-line-plots/" class="md-nav__link">
+        3d filled line plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-isosurface-plots/" class="md-nav__link">
+        3d isosurface plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-line-plots/" class="md-nav__link">
+        3d line plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-mesh/" class="md-nav__link">
+        3d mesh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-network-graph/" class="md-nav__link">
+        3d network graph
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-parametric-plots/" class="md-nav__link">
+        3d parametric plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-point-clustering/" class="md-nav__link">
+        3d point clustering
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-scatter-plots/" class="md-nav__link">
+        3d scatter plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-subplots/" class="md-nav__link">
+        3d subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-surface-plots/" class="md-nav__link">
+        3d surface plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-volume/" class="md-nav__link">
+        3d volume
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-wireframe-plots/" class="md-nav__link">
+        3d wireframe plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LaTeX/" class="md-nav__link">
+        LaTeX
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aggregations/" class="md-nav__link">
+        Aggregations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amazon-redshift/" class="md-nav__link">
+        Amazon redshift
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animations/" class="md-nav__link">
+        Animations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotated-heatmap/" class="md-nav__link">
+        Annotated heatmap
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anova/" class="md-nav__link">
+        Anova
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache-spark/" class="md-nav__link">
+        Apache spark
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../average_multiple_curves/" class="md-nav__link">
+        Average multiple curves
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../axes/" class="md-nav__link">
+        Axes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bar-charts/" class="md-nav__link">
+        Bar charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baseline-detection/" class="md-nav__link">
+        Baseline detection
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baseline-subtraction/" class="md-nav__link">
+        Baseline subtraction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic-statistics/" class="md-nav__link">
+        Basic statistics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../big-data-analytics-with-pandas-and-sqlite/" class="md-nav__link">
+        Big data analytics with pandas and sqlite
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../box-plots/" class="md-nav__link">
+        Box plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bubble-charts/" class="md-nav__link">
+        Bubble charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bubble-maps/" class="md-nav__link">
+        Bubble maps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builtin-colorscales/" class="md-nav__link">
+        Builtin colorscales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bullet-charts/" class="md-nav__link">
+        Bullet charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../candlestick-charts/" class="md-nav__link">
+        Candlestick charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carpet-contour/" class="md-nav__link">
+        Carpet contour
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carpet-plot/" class="md-nav__link">
+        Carpet plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carpet-scatter/" class="md-nav__link">
+        Carpet scatter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cars-exploration/" class="md-nav__link">
+        Cars exploration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../categorical-axes/" class="md-nav__link">
+        Categorical axes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change-callbacks-datashader/" class="md-nav__link">
+        Change callbacks datashader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chord-diagram/" class="md-nav__link">
+        Chord Diagrams with Plotly
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choropleth-maps/" class="md-nav__link">
+        Choropleth maps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../click-events/" class="md-nav__link">
+        Click events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmocean-colorscales/" class="md-nav__link">
+        Cmocean colorscales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colorscales/" class="md-nav__link">
+        Colorscales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cone-plot/" class="md-nav__link">
+        Cone plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-options/" class="md-nav__link">
+        Configuration options
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../continuous-error-bars/" class="md-nav__link">
+        Continuous error bars
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contour-plots/" class="md-nav__link">
+        Contour plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convolution/" class="md-nav__link">
+        Convolution
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          County choropleth
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        County choropleth
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deprecation-warning" class="md-nav__link">
+    Deprecation warning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-online-dashboard-legacy/" class="md-nav__link">
+        Create online dashboard legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creating-and-updating-figures/" class="md-nav__link">
+        Creating and updating figures
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-buttons/" class="md-nav__link">
+        Custom buttons
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dash/" class="md-nav__link">
+        Dash
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datashader/" class="md-nav__link">
+        Datashader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dendrogram/" class="md-nav__link">
+        Dendrogram
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../density-plots/" class="md-nav__link">
+        Density plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discrete-color/" class="md-nav__link">
+        Discrete color
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discrete-frequency/" class="md-nav__link">
+        Discrete frequency
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../distplot/" class="md-nav__link">
+        Distplot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dot-plots/" class="md-nav__link">
+        Dot plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dropdowns/" class="md-nav__link">
+        Dropdowns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecdf-plots/" class="md-nav__link">
+        Ecdf plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-bars/" class="md-nav__link">
+        Error bars
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exponential-fits/" class="md-nav__link">
+        Exponential fits
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facet-plots/" class="md-nav__link">
+        Facet plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fft-filters/" class="md-nav__link">
+        Fft filters
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-factories/" class="md-nav__link">
+        Figure factories
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-factory-subplots/" class="md-nav__link">
+        Figure factory subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-factory-table/" class="md-nav__link">
+        Figure factory table
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-introspection/" class="md-nav__link">
+        Figure introspection
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-labels/" class="md-nav__link">
+        Figure labels
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-structure/" class="md-nav__link">
+        Figure structure
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figurewidget-app/" class="md-nav__link">
+        Figurewidget app
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figurewidget/" class="md-nav__link">
+        Figurewidget
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filled-area-animation/" class="md-nav__link">
+        Filled area animation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filled-area-on-mapbox/" class="md-nav__link">
+        Filled area on mapbox
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filled-area-plots/" class="md-nav__link">
+        Filled area plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filled-chord-diagram/" class="md-nav__link">
+        Filled-Chord Diagrams with Plotly
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filter/" class="md-nav__link">
+        Filter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frequency-counts/" class="md-nav__link">
+        Frequency counts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funnel-charts/" class="md-nav__link">
+        Funnel charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gantt/" class="md-nav__link">
+        Gantt
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gapminder-example/" class="md-nav__link">
+        Gapminder example
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gauge-charts/" class="md-nav__link">
+        Gauge charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_big_query/" class="md-nav__link">
+        Google big query
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph-data-from-mysql-database-in-python/" class="md-nav__link">
+        Graph data from mysql database in python
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph-objects/" class="md-nav__link">
+        Graph objects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphing-multiple-chart-types/" class="md-nav__link">
+        Graphing multiple chart types
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-by/" class="md-nav__link">
+        Group by
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heatmap-animation/" class="md-nav__link">
+        Heatmap animation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heatmap-webgl/" class="md-nav__link">
+        Heatmap webgl
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heatmaps/" class="md-nav__link">
+        Heatmaps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hexbin-mapbox/" class="md-nav__link">
+        Hexbin mapbox
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../histograms/" class="md-nav__link">
+        Histograms
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../horizontal-bar-charts/" class="md-nav__link">
+        Horizontal bar charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../horizontal-vertical-shapes/" class="md-nav__link">
+        Horizontal vertical shapes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hover-text-and-formatting/" class="md-nav__link">
+        Hover text and formatting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html-reports/" class="md-nav__link">
+        Html reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../icicle-charts/" class="md-nav__link">
+        Icicle charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../igraph-networkx-comparison/" class="md-nav__link">
+        Igraph networkx comparison
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/" class="md-nav__link">
+        Images
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imshow/" class="md-nav__link">
+        Imshow
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../indicator/" class="md-nav__link">
+        Indicator
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insets/" class="md-nav__link">
+        Insets
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interact-decorator/" class="md-nav__link">
+        Interact decorator
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interactive-html-export/" class="md-nav__link">
+        Interactive html export
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interpolation-and-extrapolation-in-1d/" class="md-nav__link">
+        Interpolation and extrapolation in 1d
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interpolation-and-extrapolation-in-2d/" class="md-nav__link">
+        Interpolation and extrapolation in 2d
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipython-vs-python/" class="md-nav__link">
+        Ipython vs python
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter-lab-tools/" class="md-nav__link">
+        Jupyter lab tools
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../legacy-polar-chart/" class="md-nav__link">
+        Legacy polar chart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../legend/" class="md-nav__link">
+        Legend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../line-and-scatter/" class="md-nav__link">
+        Line and scatter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../line-charts/" class="md-nav__link">
+        Line charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-algebra/" class="md-nav__link">
+        Linear algebra
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-fits/" class="md-nav__link">
+        Linear fits
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-gauge-chart/" class="md-nav__link">
+        Linear gauge chart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lines-on-mapbox/" class="md-nav__link">
+        Lines on mapbox
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lines-on-maps/" class="md-nav__link">
+        Lines on maps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log-plot/" class="md-nav__link">
+        Log plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logos/" class="md-nav__link">
+        Logos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map-configuration/" class="md-nav__link">
+        Map configuration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map-subplots-and-small-multiples/" class="md-nav__link">
+        Map subplots and small multiples
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapbox-county-choropleth/" class="md-nav__link">
+        Mapbox county choropleth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapbox-density-heatmaps/" class="md-nav__link">
+        Mapbox density heatmaps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapbox-layers/" class="md-nav__link">
+        Mapbox layers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marginal-plots/" class="md-nav__link">
+        Marginal plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marker-style/" class="md-nav__link">
+        Marker style
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matplotlib-colorscales/" class="md-nav__link">
+        Matplotlib colorscales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mixed-subplots/" class="md-nav__link">
+        Mixed subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-knn/" class="md-nav__link">
+        Ml knn
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-pca/" class="md-nav__link">
+        Ml pca
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-regression/" class="md-nav__link">
+        Ml regression
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-roc-pr/" class="md-nav__link">
+        Ml roc pr
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-tsne-umap-projections/" class="md-nav__link">
+        Ml tsne umap projections
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml_apps/" class="md-nav__link">
+        Ml apps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiple-axes/" class="md-nav__link">
+        Multiple axes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiple-transforms/" class="md-nav__link">
+        Multiple transforms
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-graphs/" class="md-nav__link">
+        Network graphs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../normality-test/" class="md-nav__link">
+        Normality test
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../normalization/" class="md-nav__link">
+        Normalization
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numerical-differentiation/" class="md-nav__link">
+        Numerical differentiation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numerical-integration/" class="md-nav__link">
+        Numerical integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ohlc-charts/" class="md-nav__link">
+        Ohlc charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orca-management/" class="md-nav__link">
+        Orca management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outlier-test/" class="md-nav__link">
+        Outlier test
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pandas-backend/" class="md-nav__link">
+        Pandas backend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parallel-categories-diagram/" class="md-nav__link">
+        Parallel categories diagram
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parallel-coordinates-plot/" class="md-nav__link">
+        Parallel coordinates plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pattern-hatching-texture/" class="md-nav__link">
+        Pattern hatching texture
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pdf-reports/" class="md-nav__link">
+        Pdf reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peak-finding/" class="md-nav__link">
+        Peak finding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peak-fitting/" class="md-nav__link">
+        Peak fitting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peak-integration/" class="md-nav__link">
+        Peak integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pie-charts/" class="md-nav__link">
+        Pie charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot-data-from-csv/" class="md-nav__link">
+        Plot data from csv
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plotly-express/" class="md-nav__link">
+        Plotly express
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polar-chart/" class="md-nav__link">
+        Polar chart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polygon-area/" class="md-nav__link">
+        Polygon area
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polynomial-fits/" class="md-nav__link">
+        Polynomial fits
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../population-pyramid-charts/" class="md-nav__link">
+        Population pyramid charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../px-arguments/" class="md-nav__link">
+        Px arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiver-plots/" class="md-nav__link">
+        Quiver plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radar-chart/" class="md-nav__link">
+        Radar chart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random-walk/" class="md-nav__link">
+        Random walk
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../range-slider/" class="md-nav__link">
+        Range slider
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renderers/" class="md-nav__link">
+        Displaying Figures
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ribbon-plots/" class="md-nav__link">
+        Ribbon plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../salesforce/" class="md-nav__link">
+        Salesforce
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sankey-diagram/" class="md-nav__link">
+        Sankey diagram
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatter-plots-on-maps/" class="md-nav__link">
+        Scatter plots on maps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scattermapbox/" class="md-nav__link">
+        Scattermapbox
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-graph-size/" class="md-nav__link">
+        Setting graph size
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shapes/" class="md-nav__link">
+        Shapes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple-mathematics-operations/" class="md-nav__link">
+        Simple mathematics operations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sliders/" class="md-nav__link">
+        Sliders
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smoothing/" class="md-nav__link">
+        Smoothing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../splom/" class="md-nav__link">
+        Splom
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-image-export/" class="md-nav__link">
+        Static image export
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statistics-charts/" class="md-nav__link">
+        Statistics charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../streaming-tutorial/" class="md-nav__link">
+        Streaming tutorial
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../streamline-plots/" class="md-nav__link">
+        Streamline plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../streamtube-plot/" class="md-nav__link">
+        Streamtube plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strip-charts/" class="md-nav__link">
+        Strip charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styling-plotly-express/" class="md-nav__link">
+        Styling plotly express
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subplots/" class="md-nav__link">
+        Subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sunburst-charts/" class="md-nav__link">
+        Sunburst charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../surface-triangulation/" class="md-nav__link">
+        Surface triangulation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t-test/" class="md-nav__link">
+        T test
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table-subplots/" class="md-nav__link">
+        Table subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table/" class="md-nav__link">
+        Table
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ternary-contour/" class="md-nav__link">
+        Ternary contour
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ternary-plots/" class="md-nav__link">
+        Ternary plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ternary-scatter-contour/" class="md-nav__link">
+        Ternary scatter contour
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tesla-supercharging-stations/" class="md-nav__link">
+        Tesla supercharging stations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-and-annotations/" class="md-nav__link">
+        Text and annotations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tick-formatting/" class="md-nav__link">
+        Tick formatting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-series/" class="md-nav__link">
+        Time series
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tree-plots/" class="md-nav__link">
+        Tree plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../treemaps/" class="md-nav__link">
+        Treemaps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triangulation/" class="md-nav__link">
+        Triangulation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trisurf/" class="md-nav__link">
+        Trisurf
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../userguide/" class="md-nav__link">
+        Plotly for Python User Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-migration/" class="md-nav__link">
+        V4 migration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../violin/" class="md-nav__link">
+        Violin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualizing-mri-volume-slices/" class="md-nav__link">
+        Visualizing mri volume slices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waterfall-charts/" class="md-nav__link">
+        Waterfall charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webgl-text-and-annotations/" class="md-nav__link">
+        Webgl text and annotations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webgl-vs-svg/" class="md-nav__link">
+        Webgl vs svg
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wide-form/" class="md-nav__link">
+        Wide form
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wind-rose-charts/" class="md-nav__link">
+        Wind rose charts
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deprecation-warning" class="md-nav__link">
+    Deprecation warning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>County choropleth</h1>
+                
+                <h3 id="deprecation-warning">Deprecation warning<a class="headerlink" href="#deprecation-warning" title="Permanent link">&para;</a></h3>
+<p>This page describes a <a href="/python/figure-factories/">legacy "figure factory" method</a> for creating map-like figures using <a href="/python/shapes">self-filled scatter traces</a>. <strong>This is no longer the recommended way to make county-level choropleth maps</strong>, instead we recommend using a <a href="/python/choropleth-maps/">GeoJSON-based approach to making outline choropleth maps</a> or the alternative <a href="/python/mapbox-county-choropleth">Mapbox tile-based choropleth maps</a>.</p>
+<h4 id="required-packages">Required Packages<a class="headerlink" href="#required-packages" title="Permanent link">&para;</a></h4>
+<p><code>geopandas</code>, <code>pyshp</code> and <code>shapely</code> must be installed for this figure factory.</p>
+<p>Run the following commands to install the correct versions of the following modules:</p>
+<div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">geopandas</span><span class="o">==</span><span class="mf">0.3.0</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyshp</span><span class="o">==</span><span class="mf">1.2.10</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">shapely</span><span class="o">==</span><span class="mf">1.6.3</span>
+</code></pre></div>
+<p>If you are using Windows, follow this post to properly install geopandas and dependencies: http://geoffboeing.com/2014/09/using-geopandas-windows/. If you are using Anaconda, do not use PIP to install the packages above. Instead use conda to install them:</p>
+<!-- #raw -->
+<p>conda install plotly
+conda install geopandas</p>
+<!-- #endraw -->
+
+<h4 id="fips-and-values">FIPS and Values<a class="headerlink" href="#fips-and-values" title="Permanent link">&para;</a></h4>
+<p>Every US state and county has an assigned ID regulated by the US Federal Government under the term FIPS (Federal Information Processing Standards) codes. There are state codes and county codes: the 2016 state and county FIPS codes can be found at the <a href="https://www.census.gov/geographies/reference-files/2016/demo/popest/2016-fips.html">US Census Website</a>.</p>
+<p>Combine a state FIPS code (eg. <code>06</code> for California) with a county FIPS code of the state (eg. <code>059</code> for Orange county) and this new state-county FIPS code (<code>06059</code>) uniquely refers to the specified state and county.</p>
+<p><code>ff.create_choropleth</code> only needs a list of FIPS codes and a list of values. Each FIPS code points to one county and each corresponding value in <code>values</code> determines the color of the county.</p>
+<h4 id="simple-example">Simple Example<a class="headerlink" href="#simple-example" title="Permanent link">&para;</a></h4>
+<p>A simple example of this is a choropleth a few counties in California:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
+
+<span class="n">fips</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;06021&#39;</span><span class="p">,</span> <span class="s1">&#39;06023&#39;</span><span class="p">,</span> <span class="s1">&#39;06027&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;06029&#39;</span><span class="p">,</span> <span class="s1">&#39;06033&#39;</span><span class="p">,</span> <span class="s1">&#39;06059&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;06047&#39;</span><span class="p">,</span> <span class="s1">&#39;06049&#39;</span><span class="p">,</span> <span class="s1">&#39;06051&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;06055&#39;</span><span class="p">,</span> <span class="s1">&#39;06061&#39;</span><span class="p">]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fips</span><span class="p">))</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_choropleth</span><span class="p">(</span><span class="n">fips</span><span class="o">=</span><span class="n">fips</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="change-the-scope">Change the Scope<a class="headerlink" href="#change-the-scope" title="Permanent link">&para;</a></h4>
+<p>Even if your FIPS values belong to a single state, the scope defaults to the entire United States as displayed in the example above. Changing the scope of the choropleth shifts the zoom and position of the USA map. You can define the scope with a list of state names and the zoom will automatically adjust to include the state outlines of the selected states.</p>
+<p>By default <code>scope</code> is set to <code>['USA']</code> which the API treats as identical to passing a list of all 50 state names:<br></p>
+<p><code>['AK', 'AL', 'CA', ...]</code></p>
+<p>State abbreviations (eg. <code>CA</code>) or the proper names (eg. <code>California</code>) as strings are accepted. If the state name is not recognized, the API will throw a Warning and indicate which FIPS values were ignored.</p>
+<p>Another param used in the example below is <code>binning_endpoints</code>. If your <code>values</code> is a list of numbers, you can bin your values into half-open intervals on the real line.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df_sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/plotly/datasets/master/minoritymajority.csv&#39;</span><span class="p">)</span>
+<span class="n">df_sample_r</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;STNAME&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;California&#39;</span><span class="p">]</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="n">df_sample_r</span><span class="p">[</span><span class="s1">&#39;TOT_POP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">fips</span> <span class="o">=</span> <span class="n">df_sample_r</span><span class="p">[</span><span class="s1">&#39;FIPS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">colorscale</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;rgb(193, 193, 193)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rgb(239,239,239)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rgb(195, 196, 222)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rgb(144,148,194)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rgb(101,104,168)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rgb(65, 53, 132)&#39;</span>
+<span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_choropleth</span><span class="p">(</span>
+    <span class="n">fips</span><span class="o">=</span><span class="n">fips</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;AZ&#39;</span><span class="p">,</span> <span class="s1">&#39;Nevada&#39;</span><span class="p">,</span> <span class="s1">&#39;Oregon&#39;</span><span class="p">,</span> <span class="s1">&#39; Idaho&#39;</span><span class="p">],</span>
+    <span class="n">binning_endpoints</span><span class="o">=</span><span class="p">[</span><span class="mi">14348</span><span class="p">,</span> <span class="mi">63983</span><span class="p">,</span> <span class="mi">134827</span><span class="p">,</span> <span class="mi">426762</span><span class="p">,</span> <span class="mi">2081313</span><span class="p">],</span> <span class="n">colorscale</span><span class="o">=</span><span class="n">colorscale</span><span class="p">,</span>
+    <span class="n">county_outline</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;rgb(255,255,255)&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> <span class="n">round_legend_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">legend_title</span><span class="o">=</span><span class="s1">&#39;Population by County&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;California and Nearby States&#39;</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="single-state">Single State<a class="headerlink" href="#single-state" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df_sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/plotly/datasets/master/minoritymajority.csv&#39;</span><span class="p">)</span>
+<span class="n">df_sample_r</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;STNAME&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Florida&#39;</span><span class="p">]</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="n">df_sample_r</span><span class="p">[</span><span class="s1">&#39;TOT_POP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">fips</span> <span class="o">=</span> <span class="n">df_sample_r</span><span class="p">[</span><span class="s1">&#39;FIPS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">endpts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">values</span><span class="p">):</span><span class="nb">max</span><span class="p">(</span><span class="n">values</span><span class="p">):</span><span class="mi">4</span><span class="n">j</span><span class="p">])</span>
+<span class="n">colorscale</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#030512&quot;</span><span class="p">,</span><span class="s2">&quot;#1d1d3b&quot;</span><span class="p">,</span><span class="s2">&quot;#323268&quot;</span><span class="p">,</span><span class="s2">&quot;#3d4b94&quot;</span><span class="p">,</span><span class="s2">&quot;#3e6ab0&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#4989bc&quot;</span><span class="p">,</span><span class="s2">&quot;#60a7c7&quot;</span><span class="p">,</span><span class="s2">&quot;#85c5d3&quot;</span><span class="p">,</span><span class="s2">&quot;#b7e0e4&quot;</span><span class="p">,</span><span class="s2">&quot;#eafcfd&quot;</span><span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_choropleth</span><span class="p">(</span>
+    <span class="n">fips</span><span class="o">=</span><span class="n">fips</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Florida&#39;</span><span class="p">],</span> <span class="n">show_state_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">colorscale</span><span class="o">=</span><span class="n">colorscale</span><span class="p">,</span> <span class="n">binning_endpoints</span><span class="o">=</span><span class="n">endpts</span><span class="p">,</span> <span class="n">round_legend_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s1">&#39;rgb(229,229,229)&#39;</span><span class="p">,</span>
+    <span class="n">paper_bgcolor</span><span class="o">=</span><span class="s1">&#39;rgb(229,229,229)&#39;</span><span class="p">,</span>
+    <span class="n">legend_title</span><span class="o">=</span><span class="s1">&#39;Population by County&#39;</span><span class="p">,</span>
+    <span class="n">county_outline</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;rgb(255,255,255)&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+    <span class="n">exponent_format</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="multiple-states">Multiple States<a class="headerlink" href="#multiple-states" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">NE_states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Connecticut&#39;</span><span class="p">,</span> <span class="s1">&#39;Maine&#39;</span><span class="p">,</span> <span class="s1">&#39;Massachusetts&#39;</span><span class="p">,</span> <span class="s1">&#39;New Hampshire&#39;</span><span class="p">,</span> <span class="s1">&#39;Rhode Island&#39;</span><span class="p">,</span> <span class="s1">&#39;Vermont&#39;</span><span class="p">]</span>
+<span class="n">df_sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/plotly/datasets/master/minoritymajority.csv&#39;</span><span class="p">)</span>
+<span class="n">df_sample_r</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;STNAME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">NE_states</span><span class="p">)]</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="n">df_sample_r</span><span class="p">[</span><span class="s1">&#39;TOT_POP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">fips</span> <span class="o">=</span> <span class="n">df_sample_r</span><span class="p">[</span><span class="s1">&#39;FIPS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">colorscale</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;rgb(68.0, 1.0, 84.0)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rgb(66.0, 64.0, 134.0)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rgb(38.0, 130.0, 142.0)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rgb(63.0, 188.0, 115.0)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rgb(216.0, 226.0, 25.0)&#39;</span>
+<span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_choropleth</span><span class="p">(</span>
+    <span class="n">fips</span><span class="o">=</span><span class="n">fips</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span>
+    <span class="n">scope</span><span class="o">=</span><span class="n">NE_states</span><span class="p">,</span> <span class="n">county_outline</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;rgb(255,255,255)&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+    <span class="n">legend_title</span><span class="o">=</span><span class="s1">&#39;Population per county&#39;</span>
+
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">legend_x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">annotations</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.12</span><span class="p">,</span> <span class="s1">&#39;xanchor&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="simplify-county-state-lines">Simplify County, State Lines<a class="headerlink" href="#simplify-county-state-lines" title="Permanent link">&para;</a></h4>
+<p>Below is a choropleth that uses several other parameters. For a full list of all available params call <code>help(ff.create_choropleth)</code></p>
+<ul>
+<li><code>simplify_county</code> determines the simplification factor for the counties. The larger the number, the fewer vertices and edges each polygon has. See http://toblerity.org/shapely/manual.html#object.simplify for more information.</li>
+<li><code>simplify_state</code> simplifies the state outline polygon. See the <a href="http://toblerity.org/shapely/manual.html#object.simplify">documentation</a> for more information.
+Default for both <code>simplify_county</code> and <code>simplify_state</code> is 0.02</li>
+</ul>
+<p>Note: This choropleth uses a divergent categorical colorscale. See http://react-colorscales.getforge.io/ for other cool colorscales.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">scope</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Oregon&#39;</span><span class="p">]</span>
+<span class="n">df_sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">&#39;https://raw.githubusercontent.com/plotly/datasets/master/minoritymajority.csv&#39;</span>
+<span class="p">)</span>
+<span class="n">df_sample_r</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;STNAME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">scope</span><span class="p">)]</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="n">df_sample_r</span><span class="p">[</span><span class="s1">&#39;TOT_POP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">fips</span> <span class="o">=</span> <span class="n">df_sample_r</span><span class="p">[</span><span class="s1">&#39;FIPS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">colorscale</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#8dd3c7&quot;</span><span class="p">,</span> <span class="s2">&quot;#ffffb3&quot;</span><span class="p">,</span> <span class="s2">&quot;#bebada&quot;</span><span class="p">,</span> <span class="s2">&quot;#fb8072&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#80b1d3&quot;</span><span class="p">,</span> <span class="s2">&quot;#fdb462&quot;</span><span class="p">,</span> <span class="s2">&quot;#b3de69&quot;</span><span class="p">,</span> <span class="s2">&quot;#fccde5&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#d9d9d9&quot;</span><span class="p">,</span> <span class="s2">&quot;#bc80bd&quot;</span><span class="p">,</span> <span class="s2">&quot;#ccebc5&quot;</span><span class="p">,</span> <span class="s2">&quot;#ffed6f&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#8dd3c7&quot;</span><span class="p">,</span> <span class="s2">&quot;#ffffb3&quot;</span><span class="p">,</span> <span class="s2">&quot;#bebada&quot;</span><span class="p">,</span> <span class="s2">&quot;#fb8072&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#80b1d3&quot;</span><span class="p">,</span> <span class="s2">&quot;#fdb462&quot;</span><span class="p">,</span> <span class="s2">&quot;#b3de69&quot;</span><span class="p">,</span> <span class="s2">&quot;#fccde5&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#d9d9d9&quot;</span><span class="p">,</span> <span class="s2">&quot;#bc80bd&quot;</span><span class="p">,</span> <span class="s2">&quot;#ccebc5&quot;</span><span class="p">,</span> <span class="s2">&quot;#ffed6f&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#8dd3c7&quot;</span><span class="p">,</span> <span class="s2">&quot;#ffffb3&quot;</span><span class="p">,</span> <span class="s2">&quot;#bebada&quot;</span><span class="p">,</span> <span class="s2">&quot;#fb8072&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#80b1d3&quot;</span><span class="p">,</span> <span class="s2">&quot;#fdb462&quot;</span><span class="p">,</span> <span class="s2">&quot;#b3de69&quot;</span><span class="p">,</span> <span class="s2">&quot;#fccde5&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#d9d9d9&quot;</span><span class="p">,</span> <span class="s2">&quot;#bc80bd&quot;</span><span class="p">,</span> <span class="s2">&quot;#ccebc5&quot;</span><span class="p">,</span> <span class="s2">&quot;#ffed6f&quot;</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_choropleth</span><span class="p">(</span>
+    <span class="n">fips</span><span class="o">=</span><span class="n">fips</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="n">scope</span><span class="p">,</span>
+    <span class="n">colorscale</span><span class="o">=</span><span class="n">colorscale</span><span class="p">,</span> <span class="n">round_legend_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">simplify_county</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">simplify_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">county_outline</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;rgb(15, 15, 55)&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+    <span class="n">state_outline</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="n">legend_title</span><span class="o">=</span><span class="s1">&#39;pop. per county&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Oregon&#39;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="the-entire-usa">The Entire USA<a class="headerlink" href="#the-entire-usa" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df_sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/plotly/datasets/master/laucnty16.csv&#39;</span><span class="p">)</span>
+<span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;State FIPS Code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;State FIPS Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;County FIPS Code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;County FIPS Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;FIPS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;State FIPS Code&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;County FIPS Code&#39;</span><span class="p">]</span>
+
+<span class="n">colorscale</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#f7fbff&quot;</span><span class="p">,</span><span class="s2">&quot;#ebf3fb&quot;</span><span class="p">,</span><span class="s2">&quot;#deebf7&quot;</span><span class="p">,</span><span class="s2">&quot;#d2e3f3&quot;</span><span class="p">,</span><span class="s2">&quot;#c6dbef&quot;</span><span class="p">,</span><span class="s2">&quot;#b3d2e9&quot;</span><span class="p">,</span><span class="s2">&quot;#9ecae1&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#85bcdb&quot;</span><span class="p">,</span><span class="s2">&quot;#6baed6&quot;</span><span class="p">,</span><span class="s2">&quot;#57a0ce&quot;</span><span class="p">,</span><span class="s2">&quot;#4292c6&quot;</span><span class="p">,</span><span class="s2">&quot;#3082be&quot;</span><span class="p">,</span><span class="s2">&quot;#2171b5&quot;</span><span class="p">,</span><span class="s2">&quot;#1361a9&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;#08519c&quot;</span><span class="p">,</span><span class="s2">&quot;#0b4083&quot;</span><span class="p">,</span><span class="s2">&quot;#08306b&quot;</span><span class="p">]</span>
+<span class="n">endpts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">colorscale</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">fips</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;FIPS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">df_sample</span><span class="p">[</span><span class="s1">&#39;Unemployment Rate (%)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_choropleth</span><span class="p">(</span>
+    <span class="n">fips</span><span class="o">=</span><span class="n">fips</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span>
+    <span class="n">binning_endpoints</span><span class="o">=</span><span class="n">endpts</span><span class="p">,</span>
+    <span class="n">colorscale</span><span class="o">=</span><span class="n">colorscale</span><span class="p">,</span>
+    <span class="n">show_state_data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">show_hover</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">centroid_marker</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;opacity&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="n">asp</span><span class="o">=</span><span class="mf">2.9</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;USA by Unemployment %&#39;</span><span class="p">,</span>
+    <span class="n">legend_title</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">% u</span><span class="s1">nemployed&#39;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p>Also see Mapbox county choropleths made in Python: <a href="https://plotly.com/python/mapbox-county-choropleth/">https://plotly.com/python/mapbox-county-choropleth/</a></p>
+<h3 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h3>
+<p>For more info on <code>ff.create_choropleth()</code>, see the <a href="https://plotly.com/python-api-reference/generated/plotly.figure_factory.create_choropleth.html">full function reference</a></p>
+                
+                  
+                
+              
+              
+                
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-XXXXXXXXXXX"
+     data-ad-slot="XXXXXXX"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../convolution/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Convolution" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Convolution
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../create-online-dashboard-legacy/" class="md-footer__link md-footer__link--next" aria-label="下一页: Create online dashboard legacy" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Create online dashboard legacy
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

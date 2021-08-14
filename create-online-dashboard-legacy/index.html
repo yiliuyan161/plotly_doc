@@ -1,0 +1,3900 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://plotly.icopy.site/create-online-dashboard-legacy/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Create online dashboard legacy - plotly文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="white">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="plotly文档" class="md-header__button md-logo" aria-label="plotly文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            plotly文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Create online dashboard legacy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="plotly文档" class="md-nav__button md-logo" aria-label="plotly文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    plotly文档
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1d-correlation/" class="md-nav__link">
+        1d correlation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2D-Histogram/" class="md-nav__link">
+        2D Histogram
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2d-histogram-contour/" class="md-nav__link">
+        2d histogram contour
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2d-projection-of-3d-surface/" class="md-nav__link">
+        2d projection of 3d surface
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-axes/" class="md-nav__link">
+        3d axes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-bubble-charts/" class="md-nav__link">
+        3d bubble charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-camera-controls/" class="md-nav__link">
+        3d camera controls
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-filled-line-plots/" class="md-nav__link">
+        3d filled line plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-isosurface-plots/" class="md-nav__link">
+        3d isosurface plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-line-plots/" class="md-nav__link">
+        3d line plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-mesh/" class="md-nav__link">
+        3d mesh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-network-graph/" class="md-nav__link">
+        3d network graph
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-parametric-plots/" class="md-nav__link">
+        3d parametric plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-point-clustering/" class="md-nav__link">
+        3d point clustering
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-scatter-plots/" class="md-nav__link">
+        3d scatter plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-subplots/" class="md-nav__link">
+        3d subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-surface-plots/" class="md-nav__link">
+        3d surface plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-volume/" class="md-nav__link">
+        3d volume
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3d-wireframe-plots/" class="md-nav__link">
+        3d wireframe plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LaTeX/" class="md-nav__link">
+        LaTeX
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aggregations/" class="md-nav__link">
+        Aggregations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amazon-redshift/" class="md-nav__link">
+        Amazon redshift
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animations/" class="md-nav__link">
+        Animations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotated-heatmap/" class="md-nav__link">
+        Annotated heatmap
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anova/" class="md-nav__link">
+        Anova
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache-spark/" class="md-nav__link">
+        Apache spark
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../average_multiple_curves/" class="md-nav__link">
+        Average multiple curves
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../axes/" class="md-nav__link">
+        Axes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bar-charts/" class="md-nav__link">
+        Bar charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baseline-detection/" class="md-nav__link">
+        Baseline detection
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baseline-subtraction/" class="md-nav__link">
+        Baseline subtraction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic-statistics/" class="md-nav__link">
+        Basic statistics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../big-data-analytics-with-pandas-and-sqlite/" class="md-nav__link">
+        Big data analytics with pandas and sqlite
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../box-plots/" class="md-nav__link">
+        Box plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bubble-charts/" class="md-nav__link">
+        Bubble charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bubble-maps/" class="md-nav__link">
+        Bubble maps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builtin-colorscales/" class="md-nav__link">
+        Builtin colorscales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bullet-charts/" class="md-nav__link">
+        Bullet charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../candlestick-charts/" class="md-nav__link">
+        Candlestick charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carpet-contour/" class="md-nav__link">
+        Carpet contour
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carpet-plot/" class="md-nav__link">
+        Carpet plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carpet-scatter/" class="md-nav__link">
+        Carpet scatter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cars-exploration/" class="md-nav__link">
+        Cars exploration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../categorical-axes/" class="md-nav__link">
+        Categorical axes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change-callbacks-datashader/" class="md-nav__link">
+        Change callbacks datashader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chord-diagram/" class="md-nav__link">
+        Chord Diagrams with Plotly
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choropleth-maps/" class="md-nav__link">
+        Choropleth maps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../click-events/" class="md-nav__link">
+        Click events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmocean-colorscales/" class="md-nav__link">
+        Cmocean colorscales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colorscales/" class="md-nav__link">
+        Colorscales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cone-plot/" class="md-nav__link">
+        Cone plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-options/" class="md-nav__link">
+        Configuration options
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../continuous-error-bars/" class="md-nav__link">
+        Continuous error bars
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contour-plots/" class="md-nav__link">
+        Contour plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convolution/" class="md-nav__link">
+        Convolution
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../county-choropleth/" class="md-nav__link">
+        County choropleth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Create online dashboard legacy
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creating-and-updating-figures/" class="md-nav__link">
+        Creating and updating figures
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-buttons/" class="md-nav__link">
+        Custom buttons
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dash/" class="md-nav__link">
+        Dash
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datashader/" class="md-nav__link">
+        Datashader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dendrogram/" class="md-nav__link">
+        Dendrogram
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../density-plots/" class="md-nav__link">
+        Density plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discrete-color/" class="md-nav__link">
+        Discrete color
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discrete-frequency/" class="md-nav__link">
+        Discrete frequency
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../distplot/" class="md-nav__link">
+        Distplot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dot-plots/" class="md-nav__link">
+        Dot plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dropdowns/" class="md-nav__link">
+        Dropdowns
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecdf-plots/" class="md-nav__link">
+        Ecdf plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-bars/" class="md-nav__link">
+        Error bars
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exponential-fits/" class="md-nav__link">
+        Exponential fits
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facet-plots/" class="md-nav__link">
+        Facet plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fft-filters/" class="md-nav__link">
+        Fft filters
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-factories/" class="md-nav__link">
+        Figure factories
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-factory-subplots/" class="md-nav__link">
+        Figure factory subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-factory-table/" class="md-nav__link">
+        Figure factory table
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-introspection/" class="md-nav__link">
+        Figure introspection
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-labels/" class="md-nav__link">
+        Figure labels
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figure-structure/" class="md-nav__link">
+        Figure structure
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figurewidget-app/" class="md-nav__link">
+        Figurewidget app
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../figurewidget/" class="md-nav__link">
+        Figurewidget
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filled-area-animation/" class="md-nav__link">
+        Filled area animation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filled-area-on-mapbox/" class="md-nav__link">
+        Filled area on mapbox
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filled-area-plots/" class="md-nav__link">
+        Filled area plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filled-chord-diagram/" class="md-nav__link">
+        Filled-Chord Diagrams with Plotly
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filter/" class="md-nav__link">
+        Filter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frequency-counts/" class="md-nav__link">
+        Frequency counts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funnel-charts/" class="md-nav__link">
+        Funnel charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gantt/" class="md-nav__link">
+        Gantt
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gapminder-example/" class="md-nav__link">
+        Gapminder example
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gauge-charts/" class="md-nav__link">
+        Gauge charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_big_query/" class="md-nav__link">
+        Google big query
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph-data-from-mysql-database-in-python/" class="md-nav__link">
+        Graph data from mysql database in python
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph-objects/" class="md-nav__link">
+        Graph objects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphing-multiple-chart-types/" class="md-nav__link">
+        Graphing multiple chart types
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-by/" class="md-nav__link">
+        Group by
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heatmap-animation/" class="md-nav__link">
+        Heatmap animation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heatmap-webgl/" class="md-nav__link">
+        Heatmap webgl
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heatmaps/" class="md-nav__link">
+        Heatmaps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hexbin-mapbox/" class="md-nav__link">
+        Hexbin mapbox
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../histograms/" class="md-nav__link">
+        Histograms
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../horizontal-bar-charts/" class="md-nav__link">
+        Horizontal bar charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../horizontal-vertical-shapes/" class="md-nav__link">
+        Horizontal vertical shapes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hover-text-and-formatting/" class="md-nav__link">
+        Hover text and formatting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html-reports/" class="md-nav__link">
+        Html reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../icicle-charts/" class="md-nav__link">
+        Icicle charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../igraph-networkx-comparison/" class="md-nav__link">
+        Igraph networkx comparison
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/" class="md-nav__link">
+        Images
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imshow/" class="md-nav__link">
+        Imshow
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../indicator/" class="md-nav__link">
+        Indicator
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insets/" class="md-nav__link">
+        Insets
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interact-decorator/" class="md-nav__link">
+        Interact decorator
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interactive-html-export/" class="md-nav__link">
+        Interactive html export
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interpolation-and-extrapolation-in-1d/" class="md-nav__link">
+        Interpolation and extrapolation in 1d
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interpolation-and-extrapolation-in-2d/" class="md-nav__link">
+        Interpolation and extrapolation in 2d
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipython-vs-python/" class="md-nav__link">
+        Ipython vs python
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter-lab-tools/" class="md-nav__link">
+        Jupyter lab tools
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../legacy-polar-chart/" class="md-nav__link">
+        Legacy polar chart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../legend/" class="md-nav__link">
+        Legend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../line-and-scatter/" class="md-nav__link">
+        Line and scatter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../line-charts/" class="md-nav__link">
+        Line charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-algebra/" class="md-nav__link">
+        Linear algebra
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-fits/" class="md-nav__link">
+        Linear fits
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-gauge-chart/" class="md-nav__link">
+        Linear gauge chart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lines-on-mapbox/" class="md-nav__link">
+        Lines on mapbox
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lines-on-maps/" class="md-nav__link">
+        Lines on maps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log-plot/" class="md-nav__link">
+        Log plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logos/" class="md-nav__link">
+        Logos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map-configuration/" class="md-nav__link">
+        Map configuration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map-subplots-and-small-multiples/" class="md-nav__link">
+        Map subplots and small multiples
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapbox-county-choropleth/" class="md-nav__link">
+        Mapbox county choropleth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapbox-density-heatmaps/" class="md-nav__link">
+        Mapbox density heatmaps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapbox-layers/" class="md-nav__link">
+        Mapbox layers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marginal-plots/" class="md-nav__link">
+        Marginal plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marker-style/" class="md-nav__link">
+        Marker style
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matplotlib-colorscales/" class="md-nav__link">
+        Matplotlib colorscales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mixed-subplots/" class="md-nav__link">
+        Mixed subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-knn/" class="md-nav__link">
+        Ml knn
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-pca/" class="md-nav__link">
+        Ml pca
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-regression/" class="md-nav__link">
+        Ml regression
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-roc-pr/" class="md-nav__link">
+        Ml roc pr
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-tsne-umap-projections/" class="md-nav__link">
+        Ml tsne umap projections
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml_apps/" class="md-nav__link">
+        Ml apps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiple-axes/" class="md-nav__link">
+        Multiple axes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiple-transforms/" class="md-nav__link">
+        Multiple transforms
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-graphs/" class="md-nav__link">
+        Network graphs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../normality-test/" class="md-nav__link">
+        Normality test
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../normalization/" class="md-nav__link">
+        Normalization
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numerical-differentiation/" class="md-nav__link">
+        Numerical differentiation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numerical-integration/" class="md-nav__link">
+        Numerical integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ohlc-charts/" class="md-nav__link">
+        Ohlc charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orca-management/" class="md-nav__link">
+        Orca management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outlier-test/" class="md-nav__link">
+        Outlier test
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pandas-backend/" class="md-nav__link">
+        Pandas backend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parallel-categories-diagram/" class="md-nav__link">
+        Parallel categories diagram
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parallel-coordinates-plot/" class="md-nav__link">
+        Parallel coordinates plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pattern-hatching-texture/" class="md-nav__link">
+        Pattern hatching texture
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pdf-reports/" class="md-nav__link">
+        Pdf reports
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peak-finding/" class="md-nav__link">
+        Peak finding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peak-fitting/" class="md-nav__link">
+        Peak fitting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peak-integration/" class="md-nav__link">
+        Peak integration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pie-charts/" class="md-nav__link">
+        Pie charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot-data-from-csv/" class="md-nav__link">
+        Plot data from csv
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plotly-express/" class="md-nav__link">
+        Plotly express
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polar-chart/" class="md-nav__link">
+        Polar chart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polygon-area/" class="md-nav__link">
+        Polygon area
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polynomial-fits/" class="md-nav__link">
+        Polynomial fits
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../population-pyramid-charts/" class="md-nav__link">
+        Population pyramid charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../px-arguments/" class="md-nav__link">
+        Px arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiver-plots/" class="md-nav__link">
+        Quiver plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radar-chart/" class="md-nav__link">
+        Radar chart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random-walk/" class="md-nav__link">
+        Random walk
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../range-slider/" class="md-nav__link">
+        Range slider
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renderers/" class="md-nav__link">
+        Displaying Figures
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ribbon-plots/" class="md-nav__link">
+        Ribbon plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../salesforce/" class="md-nav__link">
+        Salesforce
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sankey-diagram/" class="md-nav__link">
+        Sankey diagram
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatter-plots-on-maps/" class="md-nav__link">
+        Scatter plots on maps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scattermapbox/" class="md-nav__link">
+        Scattermapbox
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-graph-size/" class="md-nav__link">
+        Setting graph size
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shapes/" class="md-nav__link">
+        Shapes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple-mathematics-operations/" class="md-nav__link">
+        Simple mathematics operations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sliders/" class="md-nav__link">
+        Sliders
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smoothing/" class="md-nav__link">
+        Smoothing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../splom/" class="md-nav__link">
+        Splom
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-image-export/" class="md-nav__link">
+        Static image export
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statistics-charts/" class="md-nav__link">
+        Statistics charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../streaming-tutorial/" class="md-nav__link">
+        Streaming tutorial
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../streamline-plots/" class="md-nav__link">
+        Streamline plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../streamtube-plot/" class="md-nav__link">
+        Streamtube plot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strip-charts/" class="md-nav__link">
+        Strip charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styling-plotly-express/" class="md-nav__link">
+        Styling plotly express
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subplots/" class="md-nav__link">
+        Subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sunburst-charts/" class="md-nav__link">
+        Sunburst charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../surface-triangulation/" class="md-nav__link">
+        Surface triangulation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../t-test/" class="md-nav__link">
+        T test
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table-subplots/" class="md-nav__link">
+        Table subplots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../table/" class="md-nav__link">
+        Table
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ternary-contour/" class="md-nav__link">
+        Ternary contour
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ternary-plots/" class="md-nav__link">
+        Ternary plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ternary-scatter-contour/" class="md-nav__link">
+        Ternary scatter contour
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tesla-supercharging-stations/" class="md-nav__link">
+        Tesla supercharging stations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-and-annotations/" class="md-nav__link">
+        Text and annotations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tick-formatting/" class="md-nav__link">
+        Tick formatting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-series/" class="md-nav__link">
+        Time series
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tree-plots/" class="md-nav__link">
+        Tree plots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../treemaps/" class="md-nav__link">
+        Treemaps
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triangulation/" class="md-nav__link">
+        Triangulation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trisurf/" class="md-nav__link">
+        Trisurf
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../userguide/" class="md-nav__link">
+        Plotly for Python User Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../v4-migration/" class="md-nav__link">
+        V4 migration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../violin/" class="md-nav__link">
+        Violin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualizing-mri-volume-slices/" class="md-nav__link">
+        Visualizing mri volume slices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waterfall-charts/" class="md-nav__link">
+        Waterfall charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webgl-text-and-annotations/" class="md-nav__link">
+        Webgl text and annotations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webgl-vs-svg/" class="md-nav__link">
+        Webgl vs svg
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wide-form/" class="md-nav__link">
+        Wide form
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wind-rose-charts/" class="md-nav__link">
+        Wind rose charts
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Create online dashboard legacy</h1>
+                
+                <h4 id="new-to-plotly">New to Plotly?<a class="headerlink" href="#new-to-plotly" title="Permanent link">&para;</a></h4>
+<p>Plotly's Python library is free and open source! <a href="https://plot.ly/python/getting-started/">Get started</a> by downloading the client and <a href="https://plot.ly/python/getting-started/">reading the primer</a>.
+<br>You can set up Plotly to work in <a href="https://plot.ly/python/getting-started/#initialization-for-online-plotting">online</a> or <a href="https://plot.ly/python/getting-started/#initialization-for-offline-plotting">offline</a> mode, or in <a href="https://plot.ly/python/getting-started/#start-plotting-online">jupyter notebooks</a>.
+<br>We also have a quick-reference <a href="https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf">cheatsheet</a> (new!) to help you get started!</p>
+<h4 id="version-check">Version Check<a class="headerlink" href="#version-check" title="Permanent link">&para;</a></h4>
+<p>Note: The dashboard API is available in version <b>2.0.5.+</b><br>
+Run  <code>pip install plotly --upgrade</code> to update your Plotly version.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly</span>
+<span class="n">plotly</span><span class="o">.</span><span class="n">__version__</span>
+</code></pre></div>
+<h4 id="plotly-dashboards">Plotly Dashboards<a class="headerlink" href="#plotly-dashboards" title="Permanent link">&para;</a></h4>
+<p>A dashboard is a collection of plots and images organized with a certain layout. There are two ways to create a Plotly dashboard: using the <a href="https://plot.ly/dashboard/create/">online creator</a> or programmatically with Plotly's python API.</p>
+<p>In Plotly, dashboards can contain plots, text and webpage images. To use the online creator, see https://plot.ly/dashboard/create/. Dashboards are stored in your Plotly account: https://plot.ly/organize</p>
+<h4 id="dashboard-privacy">Dashboard Privacy<a class="headerlink" href="#dashboard-privacy" title="Permanent link">&para;</a></h4>
+<p>In the same way that a <code>plot</code> can be <code>public</code>, <code>private</code> or <code>secret</code>, dashboards can also be <code>public</code>, <code>private</code> or <code>secret</code> independent of the plots inside them. So if you're sharing a <code>dashboard</code> with someone and one or more of your plots are set to <code>private</code>, they will not show for the other user. For more information about this refer to the <a href="http://help.plot.ly/dashboard-privacy/">Dashboard Privacy Doc</a>.</p>
+<h4 id="initialize-a-dashboard">Initialize a Dashboard<a class="headerlink" href="#initialize-a-dashboard" title="Permanent link">&para;</a></h4>
+<p>Now you can programmatically create and modify dashboards in Python. These dashboards can be uploaded to the Plotly server to join your other dashboards. You can also retrieve dashboards from Plotly.</p>
+<p>Let's start by creating a new dashboard. To get a preview of the HTML representation of the dashboard organization - i.e. where the items in the dashboard are located with respect to one another - run the <code>.get_preview()</code> method in a notebook cell. Everytime you modify your dashboard you should run this to check what it looks like.</p>
+<p><code>IMPORTANT NOTE</code>: because of the way <code>.get_preview()</code> works <em>only</em> one cell of the Jupyter notebook can display the preview of the dashboard after running this method. A good setup is to designate one cell to look like <code>my_dboard.get_preview()</code> and then run that every time you make a change to update the HTML representation of the dashboard. For the purposes of clarity, each modification of the dashboard in this tutorial is clearly shown.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.dashboard_objs</span> <span class="k">as</span> <span class="nn">dashboard</span>
+
+<span class="kn">import</span> <span class="nn">IPython.display</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">my_dboard</span> <span class="o">=</span> <span class="n">dashboard</span><span class="o">.</span><span class="n">Dashboard</span><span class="p">()</span>
+<span class="n">my_dboard</span><span class="o">.</span><span class="n">get_preview</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="choose-plots">Choose Plots<a class="headerlink" href="#choose-plots" title="Permanent link">&para;</a></h4>
+<p>In order to use the dashboard, we need to put some plots into it. You can either make these on-the-fly in Jupyter or use a plot you've already created by using its url.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.plotly</span> <span class="k">as</span> <span class="nn">py</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">colorscale</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;#FAEE1C&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.33</span><span class="p">,</span> <span class="s1">&#39;#F3558E&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.66</span><span class="p">,</span> <span class="s1">&#39;#9C1DE7&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;#581B98&#39;</span><span class="p">]]</span>
+<span class="n">trace1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
+        <span class="n">colorscale</span><span class="o">=</span><span class="n">colorscale</span><span class="p">,</span>
+        <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace1</span><span class="p">]</span>
+<span class="n">url_1</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;scatter-for-dashboard&#39;</span><span class="p">,</span> <span class="n">auto_open</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;scatter-for-dashboard&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Create a plot with a secret key:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.plotly</span> <span class="k">as</span> <span class="nn">py</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="o">+</span> <span class="mi">6</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#FAEE1C&#39;</span><span class="p">,</span> <span class="s1">&#39;#F3558E&#39;</span><span class="p">,</span> <span class="s1">&#39;#9C1DE7&#39;</span><span class="p">,</span> <span class="s1">&#39;#581B98&#39;</span><span class="p">]</span>
+
+<span class="n">trace0</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]})</span>
+<span class="n">trace1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
+<span class="n">trace2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]})</span>
+<span class="n">trace3</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="mi">3</span><span class="p">]})</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace0</span><span class="p">,</span> <span class="n">trace1</span><span class="p">,</span> <span class="n">trace2</span><span class="p">,</span> <span class="n">trace3</span><span class="p">]</span>
+
+<span class="n">url_2</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;box-plots-for-dashboard&#39;</span><span class="p">,</span> <span class="n">sharing</span><span class="o">=</span><span class="s1">&#39;secret&#39;</span><span class="p">,</span> <span class="n">auto_open</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">py</span><span class="o">.</span><span class="n">iplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;box-plots-for-dashboard&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">url_2</span>
+</code></pre></div>
+<!-- #region -->
+<h4 id="add-a-box">Add a Box<a class="headerlink" href="#add-a-box" title="Permanent link">&para;</a></h4>
+<p>If you want to place a plot, text box or a webpage into the dashboard, you need to place it in a <code>box</code> (which is just a dictionary) and <code>insert</code> it into your dashboard. We will be inserting a plot, a text box, and a secret plot.</p>
+<p>A box with a plot in it takes the form:
+<div class="highlight"><pre><span></span><code>{
+    &#39;type&#39;: &#39;box&#39;,
+    &#39;boxType&#39;: &#39;plot&#39;,
+    &#39;fileId&#39;: &#39;&#39;,
+    &#39;shareKey&#39;: None,
+    &#39;title&#39;: &#39;&#39;
+}
+</code></pre></div>
+- <code>fileId</code> is of the form <code>username:number</code> (eg. 'PlotBot:1300') which can be found in the url of your plot once it's up on the Plotly server.
+- <code>shareKey</code>: optional - the sharekey if your plot is secret.
+- <code>title</code>: optional - sets the title of your box.</p>
+<p>A box with text in it takes the form:
+<div class="highlight"><pre><span></span><code>{
+    &#39;type&#39;: &#39;box&#39;,
+    &#39;boxType&#39;: &#39;text&#39;,
+    &#39;text&#39;: &#39;&#39;,
+    &#39;title&#39;: &#39;&#39;
+}
+</code></pre></div>
+- <code>text</code>: the text you want displayed in your box.
+- <code>title</code>: optional - sets the title of your box.</p>
+<p>A box with a webpage in it takes the form:
+<div class="highlight"><pre><span></span><code>{
+    &#39;type&#39;: &#39;box&#39;,
+    &#39;boxType&#39;: &#39;webpage&#39;,
+    &#39;url&#39;: &#39;&#39;,
+    &#39;title&#39;: &#39;&#39;
+}
+</code></pre></div>
+- <code>url</code>: the url of your webpage (eg. 'https://en.wikipedia.org/wiki/Main_Page').
+- <code>title</code>: optional - sets the title of your box.</p>
+<p>Note: As above, you can run <code>py.plot()</code> to return the url of your plot and then assign it to a variable to use in a dashboard later.</p>
+<!-- #endregion -->
+
+<p>To extract the fileId from a url, use the <code>fileId_from_url</code> below. If your url is <code>secret</code>, use <code>sharekey_from_url</code> to return the sharekey from the url, then place in your box that contains a secret plot.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">def</span> <span class="nf">fileId_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return fileId from a url.&quot;&quot;&quot;</span>
+    <span class="n">raw_fileId</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;~[A-z]+/[0-9]+&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span> <span class="p">]</span>
+    <span class="k">return</span> <span class="n">raw_fileId</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sharekey_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the sharekey from a url.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s1">&#39;share_key=&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;This url is not &#39;sercret&#39;. It does not have a secret key.&quot;</span>
+    <span class="k">return</span> <span class="n">url</span><span class="p">[</span><span class="n">url</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;share_key=&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;share_key=&#39;</span><span class="p">):]</span>
+
+<span class="n">fileId_1</span> <span class="o">=</span> <span class="n">fileId_from_url</span><span class="p">(</span><span class="n">url_1</span><span class="p">)</span>
+<span class="n">fileId_2</span> <span class="o">=</span> <span class="n">fileId_from_url</span><span class="p">(</span><span class="n">url_2</span><span class="p">)</span>
+
+<span class="n">box_a</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;box&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;boxType&#39;</span><span class="p">:</span> <span class="s1">&#39;plot&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fileId&#39;</span><span class="p">:</span> <span class="n">fileId_1</span><span class="p">,</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;scatter-for-dashboard&#39;</span>
+<span class="p">}</span>
+
+<span class="n">text_for_box</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">## Distributions:</span>
+
+
+<span class="s2">#### Scatter Plot</span>
+<span class="s2">1. Ranging 0 - 500</span>
+<span class="s2">2. Even distribution</span>
+
+<span class="s2">#### Box Plot</span>
+<span class="s2">1. Similar Range</span>
+<span class="s2">2. Outliers present in trace 1 and trace 3</span>
+
+<span class="s2">You can view more markdown tips [here](https://daringfireball.net/projects/markdown/syntax).</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">box_b</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;box&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;boxType&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">text_for_box</span><span class="p">,</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Markdown Options for Text Box&#39;</span>
+<span class="p">}</span>
+
+<span class="n">box_c</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;box&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;boxType&#39;</span><span class="p">:</span> <span class="s1">&#39;plot&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fileId&#39;</span><span class="p">:</span> <span class="n">fileId_2</span><span class="p">,</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;box-for-dashboard&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;shareKey&#39;</span><span class="p">:</span> <span class="n">sharekey_from_url</span><span class="p">(</span><span class="n">url_2</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">my_dboard</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">box_c</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="IPython terminal" src="https://images.plot.ly/plotly-documentation/images/dashboard_1.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="o">.</span><span class="n">get_preview</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">box_a</span><span class="p">,</span> <span class="s1">&#39;above&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="IPython terminal" src="https://images.plot.ly/plotly-documentation/images/dashboard_2.png" /></p>
+<h4 id="add-box-with-custom-sizing">Add Box with Custom Sizing<a class="headerlink" href="#add-box-with-custom-sizing" title="Permanent link">&para;</a></h4>
+<p>By default when a box is inserted into the dashboard layout it splits the box it is referencing equally into two parts. You can now manually control the percentage that the new box takes. Use <code>fill_percent</code> to specify the percentage of the container box from the given side that the new box occupies. Run <code>help(dashboard.Dashboard.insert)</code> for more help.</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">box_b</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fill_percent</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="IPython terminal" src="https://images.plot.ly/plotly-documentation/images/dashboard_3.png" /></p>
+<h4 id="get-box">Get Box<a class="headerlink" href="#get-box" title="Permanent link">&para;</a></h4>
+<p>Each time <code>my_dboard.get_preview()</code> is run a layout of the dashboard is returned where each rectangular area is denoted by a number in the center. These numbers or <code>box ids</code> are essentially lookup keys that are assigned on-the-fly each time <code>.get_preview()</code> is run and are liable to change.</p>
+<p>Remember that a box is just a dictionary that specifies the plot, webpage or text that it contains. For example, let's say you want to see what plot will show up in the region <code>1</code> of the dashboard. Run <code>my_dboard.get_box(1)</code> and the dict of the box will be returned:</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="o">.</span><span class="n">get_box</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>You can now reassign the values in the dictionary to update that box. For example, you can change the title of that plot:</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="o">.</span><span class="n">get_box</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a new title&#39;</span>
+<span class="n">my_dboard</span><span class="o">.</span><span class="n">get_box</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="swap-boxes">Swap Boxes<a class="headerlink" href="#swap-boxes" title="Permanent link">&para;</a></h4>
+<p>If you want to swap the locations of two boxes you've already placed in the dashboard, run <code>my_dboard.get_preview()</code> to look at the layout of the dashboard, then simply pick two <em>unique</em> box ids and you will swap the contents stored at those locations.</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="o">.</span><span class="n">get_box</span><span class="p">(</span><span class="mi">3</span><span class="p">)[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="o">.</span><span class="n">swap</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">my_dboard</span><span class="o">.</span><span class="n">get_box</span><span class="p">(</span><span class="mi">3</span><span class="p">)[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="remove-box">Remove Box<a class="headerlink" href="#remove-box" title="Permanent link">&para;</a></h4>
+<p>You can remove a box from the dashboard by identifying its box id from the <code>my_dboard.get_preview()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">box_a</span><span class="p">,</span> <span class="s1">&#39;below&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="IPython terminal" src="https://images.plot.ly/plotly-documentation/images/dashboard_4.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="IPython terminal" src="https://images.plot.ly/plotly-documentation/images/dashboard_3.png" /></p>
+<h4 id="add-title">Add Title<a class="headerlink" href="#add-title" title="Permanent link">&para;</a></h4>
+<p>Set the title of your dashboard.</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;My First Dashboard with Python&#39;</span>
+</code></pre></div>
+<h4 id="add-a-logo">Add a Logo<a class="headerlink" href="#add-a-logo" title="Permanent link">&para;</a></h4>
+<p>Add a logo to the top-left corner of the dashboard.</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;logoUrl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;https://images.plot.ly/language-icons/api-home/python-logo.png&#39;</span>
+</code></pre></div>
+<h4 id="add-links">Add Links<a class="headerlink" href="#add-links" title="Permanent link">&para;</a></h4>
+<p>Add some links to the header of the dashboard.</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;links&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;links&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Link to Plotly&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://plot.ly/&#39;</span><span class="p">})</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;links&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Link to Python Website&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://www.python.org/&#39;</span><span class="p">})</span>
+</code></pre></div>
+<h4 id="change-color-settings">Change Color Settings<a class="headerlink" href="#change-color-settings" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;foregroundColor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#000000&#39;</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;backgroundColor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#adcaea&#39;</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;headerForegroundColor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#ffffff&#39;</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;headerBackgroundColor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#D232C8&#39;</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;boxBackgroundColor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#ffffff&#39;</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;boxBorderColor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#000000&#39;</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;boxHeaderBackgroundColor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#ffffff&#39;</span>
+</code></pre></div>
+<h4 id="change-font-settings">Change Font Settings<a class="headerlink" href="#change-font-settings" title="Permanent link">&para;</a></h4>
+<p>Note that all other settings available in the <a href="https://plot.ly/dashboard/create/#/">dashboard online creator</a> are also available to with the dashboard API.</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;fontFamily&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Raleway&#39;</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;headerFontSize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1.6em&#39;</span>
+<span class="n">my_dboard</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;headerFontWeight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;200&#39;</span>
+</code></pre></div>
+<h4 id="update-dashboard-size">Update Dashboard Size<a class="headerlink" href="#update-dashboard-size" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">stacked_dboard</span> <span class="o">=</span> <span class="n">dashboard</span><span class="o">.</span><span class="n">Dashboard</span><span class="p">()</span>
+<span class="n">text_box</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;box&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;boxType&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;empty space&#39;</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">stacked_dboard</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">text_box</span><span class="p">,</span> <span class="s1">&#39;below&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># stacked_dboard.get_preview()</span>
+</code></pre></div>
+<p>If a dashboard looks like the one above with small boxes, it may be difficult to resize in the <a href="https://plot.ly/dashboard/create/">online creator</a>. To avoid this issue, resize the dashboard:</p>
+<div class="highlight"><pre><span></span><code><span class="n">stacked_dboard</span><span class="p">[</span><span class="s1">&#39;layout&#39;</span><span class="p">][</span><span class="s1">&#39;size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3000</span>
+</code></pre></div>
+<h4 id="upload-dashboard">Upload Dashboard<a class="headerlink" href="#upload-dashboard" title="Permanent link">&para;</a></h4>
+<p>To upload your dashboard to your <a href="https://plot.ly/organize/home/">Plotly cloud account</a> use <code>py.dashboard_ops.upload()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">plotly.plotly</span> <span class="k">as</span> <span class="nn">py</span>
+<span class="n">py</span><span class="o">.</span><span class="n">dashboard_ops</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">my_dboard</span><span class="p">,</span> <span class="s1">&#39;My First Dashboard with Python&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p><a href="https://plot.ly/~PythonPlotBot/540/my-first-dashboard-with-python/"><img alt="" src="https://images.plot.ly/plotly-documentation/images/my_dboard_from_API_with_logo_and_links.png" /></a></p>
+<h4 id="retrieve-dashboard">Retrieve Dashboard<a class="headerlink" href="#retrieve-dashboard" title="Permanent link">&para;</a></h4>
+<p>You can also retrieve any of your dashboards from Plotly. To see what dashboards you have in the Plotly cloud, run <code>py.dashboard_ops.get_dashboard_names()</code> to get a list of the dashboards you have in your files. To grab a specific dashboard, simply input its name into <code>py.dashboard_ops.get_dashboard()</code> to create a <code>Dashboard()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">py</span><span class="o">.</span><span class="n">dashboard_ops</span><span class="o">.</span><span class="n">get_dashboard_names</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">recent_dboard</span> <span class="o">=</span> <span class="n">py</span><span class="o">.</span><span class="n">dashboard_ops</span><span class="o">.</span><span class="n">get_dashboard</span><span class="p">(</span><span class="s1">&#39;My First Dashboard with Python&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://plot.ly/dashboard/jackp:16823/present">Twitter Marketing Campaign</a></li>
+<li><a href="https://plot.ly/dashboard/jackp:16820/present">Shell: Integrated Gas</a></li>
+<li><a href="https://plot.ly/dashboard/jackluo:430/present">US Wind Turbine Example</a></li>
+<li><a href="https://plot.ly/dashboard/jackp%3A16818/present">Motorcars Example</a>.</li>
+</ul>
+<p>You can learn more about making dashboards by going to https://plot.ly/python/dashboard/</p>
+<h4 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">help</span><span class="p">(</span><span class="n">py</span><span class="o">.</span><span class="n">dashboard_ops</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;link href=&quot;//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;&#39;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://help.plot.ly/documentation/all_static/css/ipython-notebook-custom.css&quot;&gt;&#39;</span><span class="p">))</span>
+
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">plotly</span><span class="o">/</span><span class="n">publisher</span><span class="o">.</span><span class="n">git</span> <span class="o">--</span><span class="n">upgrade</span>
+<span class="kn">import</span> <span class="nn">publisher</span>
+<span class="n">publisher</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span>
+    <span class="s1">&#39;dashboard-api.ipynb&#39;</span><span class="p">,</span> <span class="s1">&#39;python/create-online-dashboard/&#39;</span><span class="p">,</span> <span class="s1">&#39;Dashboard API | plotly&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;How to create and publish a dashboard with the Python API.&#39;</span><span class="p">,</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Dashboard API | plotly&#39;</span><span class="p">,</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Dashboard API&#39;</span><span class="p">,</span>
+    <span class="n">thumbnail</span><span class="o">=</span><span class="s1">&#39;thumbnail/dashboard.jpg&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">,</span>
+    <span class="n">page_type</span><span class="o">=</span><span class="s1">&#39;u-guide&#39;</span><span class="p">,</span> <span class="n">has_thumbnail</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="p">,</span> <span class="n">display_as</span><span class="o">=</span><span class="s1">&#39;legacy_charts&#39;</span><span class="p">,</span>
+    <span class="n">ipynb</span><span class="o">=</span> <span class="s1">&#39;~notebook_demo/148&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+                
+                  
+                
+              
+              
+                
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-XXXXXXXXXXX"
+     data-ad-slot="XXXXXXX"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../county-choropleth/" class="md-footer__link md-footer__link--prev" aria-label="上一页: County choropleth" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              County choropleth
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../creating-and-updating-figures/" class="md-footer__link md-footer__link--next" aria-label="下一页: Creating and updating figures" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Creating and updating figures
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
