@@ -1,5 +1,5 @@
-site_name: 模板  # 网站名称
-site_url: https://template.icopy.site/  # 域名
+site_name: plotly文档  # 网站名称
+site_url: https://plotly.icopy.site/  # 域名
 theme:
   font: false
   name: material
